@@ -14,14 +14,12 @@ STEPS
   - append the data to the DOM
 
 */
-// let button = $('#submit');
-
+    $('#icon').hide();
     var cityName = $('#city')
     var currentTemp = $('#currentTemp')
     var weatherDes = $('#weather')
     var minTemp = $('#minTemp')
     var maxTemp = $('#maxTemp')
-    // currentTemp.style.color = red
 
 let button = document.getElementById('submit');
 let inputValue = document.getElementById('input')
@@ -34,6 +32,9 @@ function onClick (){
 
 // on click on the button, render data
 function makeCall() {
+  $('#icon').show();
+  // $('#icon').animate({right: '250px'});
+  $('#icon').css("color", "yellow");
   let userInput = inputValue.value;
   // let ur = 'http://api.openweathermap.org/data/2.5/weather?zip='
   let ar = 'http://api.openweathermap.org/data/2.5/weather?q={city name}'
@@ -45,21 +46,28 @@ function makeCall() {
      cityName.text(data.name);
      minTemp.text(data.main.temp_min);
      maxTemp.text(data.main.temp_max);
-     weatherDes.text(data.weather[0].description);
+     weatherDes.text(data.weather[0].main);
      currentTemp.text(data.main.temp);
 
-if(data.main.temp >  90 ){
+if(data.main.temp >  80 ){
   $('#currentTemp').css("background-color", "red")
 }
 
-if(data.main.temp <  40 ){
+if(data.main.temp <  50 ){
   $('#currentTemp').css("background-color", "blue")
+
 }
 
   console.log(data)
 
     })
  }
+
+
+// $('#icon').click(function(makeCall){
+// $('#icon').toggle('1000');
+// $(this).html('<i class="fa fa-sun-o" aria-hidden="true"></i>');
+//  });
 
   $('#reset').on('click',function(){
     location.reload()

@@ -5,16 +5,28 @@
 
 */
 body {
-  background-image: url("http://sandhosting.net/my/newedge/cool-backgrounds-for-powerpoint-slides-i14.jpg");
-  background-repeat: no-repeat;
+  background-image: url("https://4kwallpapers.co/wp-content/uploads/2015/09/abstract-colorful-vectors-design-4k-wallpapers.png");
+  /*background-repeat: no-repeat;*/
   background-position: center;
 }
 
+
+.icon {
+  display: inline;
+  size: 30px;
+}
+
+
 h1 {
-  font-family: sans-serif;
-  font-size: 25px;
-  margin: 0 auto;
-  padding: 40px;
+  font: 70px Helvetica, Sans-Serif;
+  letter-spacing: -5px;
+  color: rgba(5,5,240,0.5);
+}
+
+h1:after {
+  content: "Welcome";
+  position: absolute; left: 10px; top: 5px;
+  color: rgba(250,0,0,0.5);
 }
 
 h2{
@@ -26,8 +38,8 @@ h2{
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   animation:
-    pulse 3s ease infinite alternate,
-    nudge 5s linear infinite alternate;
+    pulse 5s ease alternate,
+    nudge 5s linear alternate;
 }
 
 #city {
@@ -101,7 +113,7 @@ h2{
 }
 
 .container {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   border-radius: 25px;
   height: 300px;
   padding: 70px;
